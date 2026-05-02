@@ -1,0 +1,290 @@
+======================================================================
+OSHA WORKPLACE INJURY & ILLNESS DATA — PROFILE REPORT
+======================================================================
+
+Source file : ITA_Summary_Data_2024.csv
+Shape       : 398,620 rows × 32 columns
+
+──────────────────────────────────────────────────────────────────────
+COLUMN NAMES & DTYPES
+──────────────────────────────────────────────────────────────────────
+  id                                            int64
+  establishment_name                            object
+  establishment_id                              int64
+  ein                                           float64
+  company_name                                  object
+  street_address                                object
+  city                                          object
+  state                                         object
+  zip_code                                      int64
+  naics_code                                    int64
+  naics_year                                    int64
+  industry_description                          object
+  establishment_type                            float64
+  size                                          int64
+  annual_average_employees                      int64
+  total_hours_worked                            int64
+  no_injuries_illnesses                         int64
+  total_deaths                                  int64
+  total_dafw_cases                              int64
+  total_djtr_cases                              int64
+  total_other_cases                             int64
+  total_dafw_days                               int64
+  total_djtr_days                               int64
+  total_injuries                                int64
+  total_skin_disorders                          int64
+  total_respiratory_conditions                  int64
+  total_poisonings                              int64
+  total_hearing_loss                            int64
+  total_other_illnesses                         int64
+  created_timestamp                             object
+  change_reason                                 object
+  year_filing_for                               int64
+
+──────────────────────────────────────────────────────────────────────
+FIRST 5 ROWS (transposed for readability)
+──────────────────────────────────────────────────────────────────────
+        id                establishment_name  establishment_id          ein                       company_name                street_address              city state  zip_code  naics_code  naics_year                                  industry_description  establishment_type  size  annual_average_employees  total_hours_worked  no_injuries_illnesses  total_deaths  total_dafw_cases  total_djtr_cases  total_other_cases  total_dafw_days  total_djtr_days  total_injuries  total_skin_disorders  total_respiratory_conditions  total_poisonings  total_hearing_loss  total_other_illnesses created_timestamp change_reason  year_filing_for
+0  2808362      AristaCare at Meadow Springs             41940  204755042.0  AristaCare at Meadow Springs  LLC           845 Germantown Pike  Plymouth Meeting    PA     19462      623110        2012                            Skilled nursing facilities                 1.0     3                       315              389754                      1             0                 1                 5                  1                1               32               7                     0                             0                 0                   0                      0  28FEB25:16:35:00           NaN             2024
+1  2587120      AM Braswell Jr. Food Company             41942  580667528.0       AM Braswell Jr. Food Company   226 North Zetterower Avenue        Statesboro    GA     30458      311421        2012                              Canning jams and jellies                 1.0    22                       119               98259                      1             0                 7                 4                  0               46               69              10                     0                             0                 0                   0                      1  31JAN25:20:24:00           NaN             2024
+2  2575264          SMM Group Chesapeake, VA             41952  453807558.0              Sims Metal Management             4300 Buell Street        Chesapeake    VA     23324      423930        2012            Metal scrap and waste merchant wholesalers                 1.0    22                       126              278678                      1             0                 0                 0                  1                0                0               1                     0                             0                 0                   0                      0  29JAN25:14:47:00           NaN             2024
+3  2575218            SMM Group Richmond, VA             41955  453807558.0              Sims Metal Management  3220 Deepwater Terminal Road          Richmond    VA     23234      423930        2012            Metal scrap and waste merchant wholesalers                 1.0    21                        35               68943                      2             0                 0                 0                  0                0                0               0                     0                             0                 0                   0                      0  29JAN25:14:31:00           NaN             2024
+4  2505064  FRP Sheet Metal Contracting Corp             41983  112459740.0   FRP Sheet Metal Contracting Corp            365 Wyandanch Ave.      West Babylon    NY     11704      238220        2012  Air-conditioning system (except window) installation                 1.0    21                        25               40919                      2             0                 0                 0                  0                0                0               0                     0                             0                 0                   0                      0  07JAN25:20:06:00           NaN             2024
+
+──────────────────────────────────────────────────────────────────────
+NULL VALUE COUNTS & PERCENTAGES
+──────────────────────────────────────────────────────────────────────
+                      null_count  null_pct
+change_reason             384744     96.52
+ein                        43260     10.85
+industry_description       26796      6.72
+company_name               19538      4.90
+establishment_type           555      0.14
+street_address                 2      0.00
+city                           2      0.00
+
+──────────────────────────────────────────────────────────────────────
+DUPLICATE ROWS
+──────────────────────────────────────────────────────────────────────
+  Duplicate rows: 0  (0.00%)
+
+──────────────────────────────────────────────────────────────────────
+NUMERIC COLUMN SUMMARY STATISTICS
+──────────────────────────────────────────────────────────────────────
+                 id  establishment_id           ein   zip_code  naics_code  naics_year  establishment_type       size  annual_average_employees  total_hours_worked  no_injuries_illnesses  total_deaths  total_dafw_cases  total_djtr_cases  total_other_cases  total_dafw_days  total_djtr_days  total_injuries  total_skin_disorders  total_respiratory_conditions  total_poisonings  total_hearing_loss  total_other_illnesses  year_filing_for
+count  3.986200e+05         398620.00  3.553600e+05  398620.00   398620.00   398620.00           398065.00  398620.00                 398620.00        3.986200e+05              398620.00     398620.00         398620.00         398620.00          398620.00        398620.00        398620.00       398620.00             398620.00                     398620.00          398620.0           398620.00              398620.00         398620.0
+mean   6.700883e+06        1025426.97  5.216782e+08   51953.25   470111.44     2016.70                1.10      12.94                    348.29        2.671577e+06                   1.43          0.00              1.32              1.08               1.35           187.11            59.41            3.46                  0.02                          0.08               0.0                0.03                   0.16           2024.0
+std    6.314821e+07         375717.02  2.566197e+08   28773.28   161915.26       45.78                0.38       9.68                  71418.28        1.367912e+09                   0.49          0.05              7.24              6.74               8.52         87993.55          1036.46           15.91                  0.28                          1.65               0.1                0.62                   4.68              0.0
+min    2.498185e+06          41940.00  0.000000e+00       0.00   111110.00        0.00                1.00       1.00                      0.00        0.000000e+00                   1.00          0.00              0.00              0.00               0.00             0.00             0.00            0.00                  0.00                          0.00               0.0                0.00                   0.00           2024.0
+25%    2.597974e+06         860937.75  3.408640e+08   29360.00   333911.00     2012.00                1.00       2.00                     20.00        2.480400e+04                   1.00          0.00              0.00              0.00               0.00             0.00             0.00            0.00                  0.00                          0.00               0.0                0.00                   0.00           2024.0
+50%    2.698110e+06        1155543.50  5.104125e+08   49315.00   452910.00     2022.00                1.00      21.00                     42.00        6.819050e+04                   1.00          0.00              0.00              0.00               0.00             0.00             0.00            1.00                  0.00                          0.00               0.0                0.00                   0.00           2024.0
+75%    2.797814e+06        1317942.25  7.522911e+08   77536.00   561790.00     2022.00                1.00      21.00                    103.00        1.762978e+05                   2.00          0.00              1.00              1.00               1.00            11.00            19.00            3.00                  0.00                          0.00               0.0                0.00                   0.00           2024.0
+max    1.002923e+09        1422948.00  1.000000e+09   99999.00   999999.00     2022.00                3.00      22.00               41092597.00        8.628470e+11                   2.00         11.00           1113.00           1947.00            2159.00      55555555.00        473107.00         2411.00                 98.00                        373.00              43.0              148.00                2437.00           2024.0
+
+──────────────────────────────────────────────────────────────────────
+VALUE COUNTS — KEY CATEGORICAL COLUMNS
+──────────────────────────────────────────────────────────────────────
+
+  [establishment_name]  — 382681 unique values
+    Main Office                              151  (0.0%)
+    Corporate                                129  (0.0%)
+    Plant 1                                  114  (0.0%)
+    Corporate Office                         109  (0.0%)
+    Headquarters                              99  (0.0%)
+    Houston                                   82  (0.0%)
+    Police Department                         69  (0.0%)
+    Public Works                              68  (0.0%)
+    Construction                              63  (0.0%)
+    Dallas                                    61  (0.0%)
+
+  [establishment_id]  — 398620 unique values
+    41940                                      1  (0.0%)
+    1282692                                    1  (0.0%)
+    1282714                                    1  (0.0%)
+    1282713                                    1  (0.0%)
+    1282712                                    1  (0.0%)
+    1282711                                    1  (0.0%)
+    1282710                                    1  (0.0%)
+    1282709                                    1  (0.0%)
+    1282708                                    1  (0.0%)
+    1282707                                    1  (0.0%)
+
+  [state]  — 61 unique values
+    CA                                    40,449  (10.1%)
+    TX                                    31,106  (7.8%)
+    FL                                    21,656  (5.4%)
+    PA                                    17,030  (4.3%)
+    IL                                    16,829  (4.2%)
+    OH                                    16,817  (4.2%)
+    NY                                    16,609  (4.2%)
+    NC                                    14,343  (3.6%)
+    MI                                    13,926  (3.5%)
+    MN                                    12,470  (3.1%)
+
+  [naics_code]  — 1218 unique values
+    445110                                18,730  (4.7%)
+    722310                                13,549  (3.4%)
+    455219                                13,267  (3.3%)
+    491110                                 9,264  (2.3%)
+    623110                                 9,200  (2.3%)
+    493110                                 8,146  (2.0%)
+    721110                                 6,497  (1.6%)
+    444110                                 6,334  (1.6%)
+    561720                                 5,556  (1.4%)
+    492110                                 5,552  (1.4%)
+
+  [naics_year]  — 4 unique values
+    2022                                 222,316  (55.8%)
+    2012                                 164,137  (41.2%)
+    2017                                  11,964  (3.0%)
+    0                                        203  (0.1%)
+
+  [industry_description]  — 16934 unique values
+    nan                                   26,796  (6.7%)
+    All Other General Merchandise Retailers   13,039  (3.3%)
+    Mail and Parcel Delivery               9,192  (2.3%)
+    Food Service Contractors               8,565  (2.1%)
+    Skilled nursing facilities             3,739  (0.9%)
+    Homecenter                             3,472  (0.9%)
+    Warehouse Clubs and Supercenters       3,369  (0.8%)
+    General warehousing and storage        3,292  (0.8%)
+    Supermarkets and Other Grocery except Convenience Stores    3,078  (0.8%)
+    Assisted-living facilities without on-site nursing care facilities    2,972  (0.7%)
+
+  [establishment_type]  — 3 unique values
+    1.0                                  370,569  (93.0%)
+    2.0                                   15,829  (4.0%)
+    3.0                                   11,667  (2.9%)
+    nan                                      555  (0.1%)
+
+  [size]  — 5 unique values
+    21                                   168,310  (42.2%)
+    1                                     86,627  (21.7%)
+    22                                    60,452  (15.2%)
+    2                                     41,833  (10.5%)
+    3                                     41,398  (10.4%)
+
+  [no_injuries_illnesses]  — 2 unique values
+    1                                    227,679  (57.1%)
+    2                                    170,941  (42.9%)
+
+  [year_filing_for]  — 1 unique values
+    2024                                 398,620  (100.0%)
+
+──────────────────────────────────────────────────────────────────────
+OUTLIER DETECTION (IQR method, numeric columns)
+──────────────────────────────────────────────────────────────────────
+
+  id
+    IQR range : [2298213.00, 3097575.00]
+    Outliers  : 1,596  (0.40%)
+    Max value : 1002923141.00   Min value: 2498185.00
+
+  establishment_id
+    IQR range : [175431.00, 2003449.00]
+    Outliers  : 18,414  (4.62%)
+    Max value : 1422948.00   Min value: 41940.00
+
+  naics_code
+    IQR range : [-7907.50, 903608.50]
+    Outliers  : 8,072  (2.02%)
+    Max value : 999999.00   Min value: 111110.00
+
+  naics_year
+    IQR range : [1997.00, 2037.00]
+    Outliers  : 203  (0.05%)
+    Max value : 2022.00   Min value: 0.00
+
+  establishment_type
+    IQR range : [1.00, 1.00]
+    Outliers  : 27,496  (6.91%)
+    Max value : 3.00   Min value: 1.00
+
+  annual_average_employees
+    IQR range : [-104.50, 227.50]
+    Outliers  : 40,273  (10.10%)
+    Max value : 41092597.00   Min value: 0.00
+
+  total_hours_worked
+    IQR range : [-202436.62, 403538.38]
+    Outliers  : 40,118  (10.06%)
+    Max value : 862847000000.00   Min value: 0.00
+
+  total_deaths
+    IQR range : [0.00, 0.00]
+    Outliers  : 758  (0.19%)
+    Max value : 11.00   Min value: 0.00
+
+  total_dafw_cases
+    IQR range : [-1.50, 2.50]
+    Outliers  : 47,122  (11.82%)
+    Max value : 1113.00   Min value: 0.00
+
+  total_djtr_cases
+    IQR range : [-1.50, 2.50]
+    Outliers  : 39,267  (9.85%)
+    Max value : 1947.00   Min value: 0.00
+
+  total_other_cases
+    IQR range : [-1.50, 2.50]
+    Outliers  : 45,220  (11.34%)
+    Max value : 2159.00   Min value: 0.00
+
+  total_dafw_days
+    IQR range : [-16.50, 27.50]
+    Outliers  : 79,344  (19.90%)
+    Max value : 55555555.00   Min value: 0.00
+
+  total_djtr_days
+    IQR range : [-28.50, 47.50]
+    Outliers  : 74,800  (18.76%)
+    Max value : 473107.00   Min value: 0.00
+
+  total_injuries
+    IQR range : [-4.50, 7.50]
+    Outliers  : 39,262  (9.85%)
+    Max value : 2411.00   Min value: 0.00
+
+  total_skin_disorders
+    IQR range : [0.00, 0.00]
+    Outliers  : 4,915  (1.23%)
+    Max value : 98.00   Min value: 0.00
+
+  total_respiratory_conditions
+    IQR range : [0.00, 0.00]
+    Outliers  : 7,255  (1.82%)
+    Max value : 373.00   Min value: 0.00
+
+  total_poisonings
+    IQR range : [0.00, 0.00]
+    Outliers  : 619  (0.16%)
+    Max value : 43.00   Min value: 0.00
+
+  total_hearing_loss
+    IQR range : [0.00, 0.00]
+    Outliers  : 3,932  (0.99%)
+    Max value : 148.00   Min value: 0.00
+
+  total_other_illnesses
+    IQR range : [0.00, 0.00]
+    Outliers  : 20,718  (5.20%)
+    Max value : 2437.00   Min value: 0.00
+
+──────────────────────────────────────────────────────────────────────
+YEAR COVERAGE
+──────────────────────────────────────────────────────────────────────
+
+  [naics_year]
+    naics_year
+0          203
+2012    164137
+2017     11964
+2022    222316
+
+  [year_filing_for]
+    year_filing_for
+2024    398620
+
+======================================================================
+END OF PROFILE REPORT
+======================================================================
